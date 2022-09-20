@@ -14,11 +14,36 @@ public class Weather {
         Scanner kbd = new Scanner(System.in);
 
         System.out.print("Enter temp in degrees F: ");
-        double temperature = kbd.nextDouble();
 
-        System.out.print("Enter wind velocity in MPH: ");
-        double wind = kbd.nextDouble();
+        double temperature;
 
+        if (kbd.hasNextDouble()) {
+           temperature = kbd.nextDouble();
+        }
+        else{
+            System.out.printf("Error: please enter a decimal number. You entered \"%s\"", kbd.next());
+            return; //exit main
+        }
+
+
+        double wind = 0; // need to give wind a value so intelij will run
+
+
+        while (true) {
+            System.out.print("Enter wind velocity in MPH: ");
+
+            if (kbd.hasNextDouble()) {
+                wind = kbd.nextDouble();
+                if (wind < 0) {
+                    System.out.printf("Error: Velocity cannot be negative you entered \"%.1f\"", wind);
+                }
+                else {
+                    break;
+                }
+            } else {
+                System.out.printf("Error: Please enter a decimal number. You entered \"%s\"", kbd.next());
+            }
+        } // While loop
         System.out.printf("The windchill for %.1f degrees F with a wind speed of %.1f MPH is %.1f\n",
                 temperature, wind, windchill(temperature, wind));
 

@@ -1,5 +1,7 @@
 package Utility;
 
+import HW3.Investment;
+
 import java.util.Scanner;
 
 public class InvestmentCalculator {
