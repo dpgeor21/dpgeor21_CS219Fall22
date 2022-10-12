@@ -19,16 +19,18 @@ public class Exam1 {
 
     public static int validateInput(){
         int n;
-
+        Scanner kbd = new Scanner(System.in);
         while (true) {
-            Scanner kbd = new Scanner(System.in);
+
             System.out.print("Enter an integer: ");
             if(kbd.hasNextInt()){
                 n = kbd.nextInt();
                 if (n < 0){
-                    n = n * -1;
+                    System.out.printf("Be sure to enter a positive number");
                 }
-                break;
+                else{
+                    break;
+                }
             }
             else if(kbd.hasNextDouble()){
 
