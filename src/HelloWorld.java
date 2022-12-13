@@ -19,5 +19,7 @@ public class HelloWorld {
         double avagadros = 6.022140857e23;
         double electron_mass = 9.1093837015e-31;
 
+        System.out.println(name.substring(0, 6));
+
     }
 }
