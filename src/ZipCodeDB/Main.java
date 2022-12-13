@@ -12,5 +12,18 @@ public class Main {
 
         Database db = new Database();
 
+        System.out.println(db.findByZip("12901")); //automatically calls .toString
+        System.out.println(db.findByZip("Should not exist"));
+
+        System.out.println(db.search("13730"));
+        System.out.println(db.search("43221"));
+
+        db.search("13617").getWeatherData();
+
+        WeatherObservation wob = db.search("13617").getWeatherData();
+        System.out.println(wob);
+
+        return;
+
     }
 }
